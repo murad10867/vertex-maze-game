@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="لعبة الهروب من المتاهة من Vertex Games">
+  <title>Vertex Maze Escape</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="security.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">V</span>
+      <div>
+        <strong>Vertex Maze Escape</strong>
+        <small>Vertex Games</small>
+      </div>
+    </div>
+    <button id="restartBtn" class="ghost-btn" type="button">إعادة المرحلة</button>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <span class="eyebrow">MAZE CHALLENGE</span>
+      <h1>الهروب من المتاهة</h1>
+      <p>اجمع كل المفاتيح 🔑 وافتح الباب 🚪 قبل ما ينتهي الوقت.</p>
+    </section>
+
+    <section class="game-layout">
+      <aside class="panel">
+        <div class="stat">
+          <span>المرحلة</span>
+          <strong id="levelValue">1</strong>
+        </div>
+        <div class="stat">
+          <span>المفاتيح</span>
+          <strong><span id="keysValue">0</span>/<span id="keysTotal">0</span></strong>
+        </div>
+        <div class="stat">
+          <span>الوقت</span>
+          <strong id="timeValue">60</strong>
+        </div>
+        <div class="stat">
+          <span>أفضل وقت</span>
+          <strong id="bestValue">--</strong>
+        </div>
+
+        <div class="instructions">
+          <strong>التحكم</strong>
+          <p>الأسهم أو WASD للحركة.</p>
+          <p>تجنب الفخاخ ⚠️ وخذ المفاتيح كلها قبل الباب.</p>
+        </div>
+      </aside>
+
+      <section class="game-card">
+        <canvas id="gameCanvas" width="720" height="720" aria-label="لعبة متاهة"></canvas>
+
+        <div id="overlay" class="overlay show">
+          <div class="overlay-box">
+            <div id="overlayIcon" class="overlay-icon">🧭</div>
+            <h2 id="overlayTitle">جاهز للهروب؟</h2>
+            <p id="overlayText">اجمع المفاتيح ثم اتجه إلى الباب.</p>
+            <button id="startBtn" class="primary-btn" type="button">ابدأ اللعبة</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="mobile-controls" aria-label="أزرار التحكم">
+      <button data-dir="up">↑</button>
+      <div>
+        <button data-dir="left">←</button>
+        <button data-dir="down">↓</button>
+        <button data-dir="right">→</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>Vertex Systems AI © 2026</footer>
+</body>
+</html>
